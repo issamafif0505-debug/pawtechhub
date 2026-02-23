@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="/src/style.css?v=US-Final-ForceRefresh" />
 </head>
 
 <body>
@@ -38,42 +38,56 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-glow"></div>
+  <!-- Hero Section (Cinematic) -->
+  <section class="hero cinematic-hero" id="hero">
+    <!-- Video Background -->
+    <div class="video-container">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://videos.pexels.com/video-files/853906/853906-hd_1920_1080_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <!-- Hero Content -->
     <div class="container hero-content">
-      <div class="hero-badge">🚀 Updated for 2026</div>
-      <h1 class="hero-title">
-        The Best <span class="gradient-text">Pet Tech Gadgets</span> of 2026
+      <div class="hero-badge badge-glass">🚀 Updated for 2026</div>
+      <h1 class="hero-title reveal-text">
+        The Future of <span class="gradient-text">Pet Care</span>
+        <br>is Here
       </h1>
-      <p class="hero-subtitle">
-        Expert reviews, honest comparisons, and exclusive deals for your furry friends.
-        Find the perfect tech to keep your pet safe, healthy, and entertained.
+      <p class="hero-subtitle reveal-text-delay">
+        Discover the smartest gadgets to keep your furry best friend safe, healthy, and happy.
+        Expert reviews on GPS, Cameras, and AI Feeders.
       </p>
-      <div class="hero-actions">
-        <a href="#products" class="btn btn-primary btn-lg">
+
+      <div class="hero-actions reveal-fade-up">
+        <a href="#products" class="btn btn-primary btn-lg btn-glow">
           Explore Top Picks
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
-        <a href="/ebook/" class="btn btn-outline btn-lg">
+        <a href="/ebook/" class="btn btn-glass btn-lg">
           📖 Free Buyer's Guide
         </a>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Products Reviewed</span>
+
+      <!-- Glassmorphism Stats -->
+      <div class="hero-stats-glass reveal-fade-up-delay">
+        <div class="stat-item">
+          <span class="stat-num">50+</span>
+          <span class="stat-lbl">Gadgets Tested</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">2.5K+</span>
-          <span class="stat-label">Happy Pet Owners</span>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+          <span class="stat-num">2.5K+</span>
+          <span class="stat-lbl">Community</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">4.9★</span>
-          <span class="stat-label">Average Rating</span>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+          <span class="stat-num">4.9★</span>
+          <span class="stat-lbl">Trusted Rating</span>
         </div>
       </div>
     </div>
@@ -89,80 +103,151 @@
         </p>
       </div>
       <div class="products-grid">
-        <!-- Product 1: Fi Smart Collar (real product) -->
-        <div class="product-card" id="product-gps">
-          <div class="product-badge">🏆 Best Overall</div>
-          <div class="product-image">
-            <div class="product-icon">📡</div>
+
+        <!-- Product 1: Fi Series 3 (Rich Media) -->
+        <article class="product-card" id="product-fi">
+          <div class="product-visuals">
+            <img src="/images/fi-collar.jpg" alt="Fi Series 3 Smart Collar" class="product-main-image" id="img-fi-main">
+            <div class="product-gallery">
+              <img src="/images/fi-collar.jpg" class="gallery-thumb active" onclick="changeImage('fi', this.src)">
+              <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=150&q=80"
+                class="gallery-thumb" onclick="changeImage('fi', this.src)">
+              <img src="https://images.unsplash.com/photo-1599409636242-7a7102e3b2e7?auto=format&fit=crop&w=150&q=80"
+                class="gallery-thumb" onclick="changeImage('fi', this.src)">
+            </div>
+            <button class="btn-video-demo" onclick="openVideo('m-aA7Y5W4aM')">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" />
+              </svg>
+              Watch Video Demo
+            </button>
           </div>
           <div class="product-info">
-            <h3 class="product-name">Fi Series 3 Smart Dog Collar</h3>
+            <span class="product-tag">🏆 Best Overall</span>
+            <h3 class="product-title">Fi Series 3 Smart Collar</h3>
             <div class="product-rating">
               <span class="stars">★★★★★</span>
-              <span class="rating-text">4.9 (2,340 reviews)</span>
+              <span class="verified-badge">Verified Choice</span>
             </div>
-            <p class="product-desc">Real-time GPS + LTE tracking, 3-month battery life, escape detection alerts, and
-              activity monitoring. The #1 smart collar for dogs.</p>
-            <div class="product-price">
-              <span class="price-current">$149.00</span>
-              <span class="price-old">$199.00</span>
-              <span class="price-save">Save 25%</span>
+            <p class="product-headline">The "Tesla" of dog collars. Escape-proof your dog with military-grade GPS.</p>
+            <ul class="benefit-list">
+              <li><strong>Live GPS Tracking:</strong> Pinpoint location in seconds via LTE-M.</li>
+              <li><strong>Escape Detection:</strong> Get instant alerts if they leave the yard.</li>
+              <li><strong>3-Month Battery:</strong> Charge once, forget it for a season.</li>
+              <li><strong>Health Sleep:</strong> Monitor activity levels and sleep quality.</li>
+            </ul>
+            <div class="product-price-block">
+              <span class="big-price">$149.00</span>
+              <span class="old-price">$199.00</span>
+              <span class="save-badge">SAVE $50</span>
             </div>
-            <a href="https://www.amazon.com/Fi-GPS-Smart-Dog-Collar/dp/B0D5BJMB9B?tag=your-tag-20"
-              class="btn btn-amazon" target="_blank" rel="nofollow noopener">
-              View on Amazon →
+            <a href="https://www.amazon.com/s?k=Fi+Series+3+Smart+Dog+Collar&tag=your-tag-20"
+              class="btn btn-primary btn-lg btn-glow" target="_blank" rel="nofollow noopener">
+              Check Price on Amazon
             </a>
           </div>
-        </div>
-        <!-- Product 2: Furbo Dog Camera (real product) -->
-        <div class="product-card" id="product-camera">
-          <div class="product-badge">📸 Most Popular</div>
-          <div class="product-image">
-            <div class="product-icon">🎥</div>
+        </article>
+
+        <!-- Product 2: Furbo 360 (Rich Media) -->
+        <article class="product-card" id="product-furbo">
+          <div class="product-visuals">
+            <img src="/images/furbo.jpg" alt="Furbo 360 Camera" class="product-main-image" id="img-furbo-main">
+            <div class="product-gallery">
+              <img src="/images/furbo.jpg" class="gallery-thumb active" onclick="changeImage('furbo', this.src)">
+              <img src="https://images.unsplash.com/photo-1581888227599-77981198520d?auto=format&fit=crop&w=150&q=80"
+                class="gallery-thumb" onclick="changeImage('furbo', this.src)">
+              <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=150&q=80"
+                class="gallery-thumb" onclick="changeImage('furbo', this.src)">
+            </div>
+            <button class="btn-video-demo" onclick="openVideo('SubrK-n7z0E')">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" />
+              </svg>
+              See It In Action
+            </button>
           </div>
           <div class="product-info">
-            <h3 class="product-name">Furbo 360° Dog Camera</h3>
+            <span class="product-tag">📸 Most Popular</span>
+            <h3 class="product-title">Furbo 360° Dog Camera</h3>
             <div class="product-rating">
               <span class="stars">★★★★★</span>
-              <span class="rating-text">4.8 (1,890 reviews)</span>
+              <span class="verified-badge">Best Seller</span>
             </div>
-            <p class="product-desc">360° rotating camera, 1080p HD, 2-way audio, treat tossing, barking alerts, and
-              night vision. Stay connected with your pet 24/7.</p>
-            <div class="product-price">
-              <span class="price-current">$59.99</span>
-              <span class="price-old">$99.99</span>
-              <span class="price-save">Save 40%</span>
+            <p class="product-headline">Stop separation anxiety. See, talk, and toss treats to your dog from anywhere.
+            </p>
+            <ul class="benefit-list">
+              <li><strong>360° Rotation:</strong> No blind spots, follows your dog automatically.</li>
+              <li><strong>Treat Tossing:</strong> Reward good behavior remotely via app.</li>
+              <li><strong>Bark Alerts:</strong> Know exactly when your dog is distressed.</li>
+              <li><strong>Color Night Vision:</strong> Crystal clear video, day or night.</li>
+            </ul>
+            <div class="product-price-block">
+              <span class="big-price">$69.00</span>
+              <span class="old-price">$99.00</span>
+              <span class="save-badge">-30% OFF</span>
             </div>
-            <a href="https://www.amazon.com/Furbo-360-Dog-Camera-Rotating/dp/B0BQ13SYJ1?tag=your-tag-20"
-              class="btn btn-amazon" target="_blank" rel="nofollow noopener">
-              View on Amazon →
+            <a href="https://www.amazon.com/s?k=Furbo+360+Dog+Camera&tag=your-tag-20"
+              class="btn btn-primary btn-lg btn-glow" target="_blank" rel="nofollow noopener">
+              Check Price on Amazon
             </a>
           </div>
-        </div>
-        <!-- Product 3: PETLIBRO Automatic Feeder (real product) -->
-        <div class="product-card" id="product-feeder">
-          <div class="product-badge">🍽️ Best Value</div>
-          <div class="product-image">
-            <div class="product-icon">🤖</div>
+        </article>
+
+        <!-- Product 3: PETLIBRO Granary (Rich Media) -->
+        <article class="product-card" id="product-petlibro">
+          <div class="product-visuals">
+            <img src="/images/petlibro.jpg" alt="Petlibro Feeder" class="product-main-image" id="img-petlibro-main">
+            <div class="product-gallery">
+              <img src="/images/petlibro.jpg" class="gallery-thumb active" onclick="changeImage('petlibro', this.src)">
+              <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=150&q=80"
+                class="gallery-thumb" onclick="changeImage('petlibro', this.src)">
+              <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=150&q=80"
+                class="gallery-thumb" onclick="changeImage('petlibro', this.src)">
+            </div>
+            <button class="btn-video-demo" onclick="openVideo('Xmwb4CjZzOo')">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" />
+              </svg>
+              Watch Commercial
+            </button>
           </div>
           <div class="product-info">
-            <h3 class="product-name">PETLIBRO Automatic Pet Feeder</h3>
+            <span class="product-tag">🍽️ Best Value</span>
+            <h3 class="product-title">PETLIBRO Automatic Feeder</h3>
             <div class="product-rating">
               <span class="stars">★★★★★</span>
-              <span class="rating-text">4.7 (1,560 reviews)</span>
+              <span class="verified-badge">Top Rated</span>
             </div>
-            <p class="product-desc">Wi-Fi enabled, app-controlled portions, 10-second voice recording, scheduled
-              feeding, and low-food alerts. Never miss mealtime.</p>
-            <div class="product-price">
-              <span class="price-current">$39.99</span>
-              <span class="price-old">$64.99</span>
-              <span class="price-save">Save 38%</span>
+            <p class="product-headline">Your pet's personal chef. Never worry about missing mealtime again.</p>
+            <ul class="benefit-list">
+              <li><strong>Freshness Seal:</strong> Granary design keeps food crunchy & pest-free.</li>
+              <li><strong>App Control:</strong> Schedule meals and portion sizes from your phone.</li>
+              <li><strong>Voice Recorder:</strong> Call your pet to dinner with your voice.</li>
+              <li><strong>Dual Power:</strong> Battery backup ensures feeding even in power outages.</li>
+            </ul>
+            <div class="product-price-block">
+              <span class="big-price">$59.99</span>
+              <span class="old-price">$79.99</span>
+              <span class="save-badge">SAVE 25%</span>
             </div>
-            <a href="https://www.amazon.com/PETLIBRO-Automatic-Cat-Feeder-Programmable/dp/B0B5ZLJ1ZP?tag=your-tag-20"
-              class="btn btn-amazon" target="_blank" rel="nofollow noopener">
-              View on Amazon →
+            <a href="https://www.amazon.com/s?k=PETLIBRO+Automatic+Cat+Feeder+WiFi&tag=your-tag-20"
+              class="btn btn-primary btn-lg btn-glow" target="_blank" rel="nofollow noopener">
+              Check Price on Amazon
             </a>
           </div>
+        </article>
+      </div>
+
+      <!-- Video Modal Container -->
+      <div id="videoModal" class="video-modal" onclick="closeVideo()">
+        <div class="video-container-modal">
+          <span class="close-modal">&times;</span>
+          <iframe id="youtubeFrame" width="100%" height="100%" src="" title="Product Video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
       </div>
       <div class="products-cta">
@@ -218,7 +303,7 @@
             <span class="article-meta">📅 Feb 2026 · 8 min read</span>
           </div>
         </a>
-        <a href="#" class="article-card" id="article-camera">
+        <a href="/articles/best-pet-cameras.html" class="article-card" id="article-camera">
           <div class="article-image"><span>🎥</span></div>
           <div class="article-info">
             <span class="article-category">Pet Cameras</span>
@@ -228,7 +313,7 @@
             <span class="article-meta">📅 Feb 2026 · 7 min read</span>
           </div>
         </a>
-        <a href="#" class="article-card" id="article-feeder">
+        <a href="/articles/best-smart-feeders.html" class="article-card" id="article-feeder">
           <div class="article-image"><span>🤖</span></div>
           <div class="article-info">
             <span class="article-category">Smart Feeders</span>
@@ -267,8 +352,8 @@
           <h4>Categories</h4>
           <ul>
             <li><a href="/articles/best-gps-trackers.html">GPS Trackers</a></li>
-            <li><a href="#">Pet Cameras</a></li>
-            <li><a href="#">Smart Feeders</a></li>
+            <li><a href="/articles/best-pet-cameras.html">Pet Cameras</a></li>
+            <li><a href="/articles/best-smart-feeders.html">Smart Feeders</a></li>
             <li><a href="#">Pet Toys</a></li>
           </ul>
         </div>
@@ -282,7 +367,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 PawTechHub. All rights reserved.</p>
+        <p>© 2026 PawTechHub. All rights reserved. Version US-Final</p>
         <p class="affiliate-disclosure">As an Amazon Associate, we earn from qualifying purchases. <a
             href="/about.html#disclosure">Learn more</a>.</p>
       </div>
